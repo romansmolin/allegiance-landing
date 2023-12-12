@@ -3,8 +3,29 @@ const formCompanies = document.querySelector('.main__form__companies');
 const footerDiscalimer = document.querySelector('.main__footer__disclaimer');
 const loaderText = document.querySelector(".loader__text");
 
-function navigateStep(nextStep, currentStep) {
+let currentStep = 1;
+
+function navigateStep(direction = "forward") {
+
+    let nextStep;
+
     hideAllSteps(currentStep);
+
+    if (direction === "forward") {
+        nextStep = currentStep + 1;
+        currentStep++;
+    } else {
+        nextStep = currentStep - 1;
+        currentStep = currentStep - 1;
+        if (nextStep < 1) {
+            console.error("Cannot navigate below Step 1");
+            return;
+        }
+    }
+
+    console.log('Current step - ' + currentStep);
+    console.log('Next step - ' + nextStep);
+
     const nextStepElement = document.getElementById(`step-${nextStep}`).style.display = "flex";
 
     if (!nextStepElement) {
@@ -13,6 +34,8 @@ function navigateStep(nextStep, currentStep) {
     }
 
     const handleStepsObj = {
+        1: () => showBackBtn(false),
+        2: () => showBackBtn(true),
         3: handleStep3,
         4: () => stickFooterToBottom(3, true),
         5: () => stickFooterToBottom(5),
@@ -24,12 +47,15 @@ function navigateStep(nextStep, currentStep) {
     if (handler) {
         handler();
     }
+
+    updateProgress(nextStep, direction)
 }
 
 function handleStep3() {
     displayFormHeaderAndFooter(false);
     stickFooterToBottom(3);
     activateLoader();
+    showBackBtn(false);
 }
 
 function handleStep6() {
@@ -46,6 +72,15 @@ function handleStep6() {
     if (companiesFooter) {
         companiesFooter.style.display = "none";
     }
+}
+
+function showBackBtn(isShow = false) {
+    const backBtn = document.querySelector('.back-btn');
+    const adjacentH2 = backBtn.nextElementSibling;
+
+    isShow 
+        ? (backBtn.classList.add('show'), adjacentH2.classList.add('hide')) 
+        : (backBtn.classList.remove('show'), adjacentH2.classList.remove('hide'));
 }
 
 function hideAllSteps(currentStep) {
@@ -78,7 +113,7 @@ function activateLoader() {
             //     'event_label': `third-step-loading-completed`,
             // });
             displayFormHeaderAndFooter(true);
-            navigateStep(4, 3);
+            navigateStep("forward");
         })
         .catch(error => {
             console.error('An error occurred:', error);
@@ -86,3 +121,36 @@ function activateLoader() {
 
 
 }
+
+function updateProgress(nextStep, direction) {
+    const mobileStepsProgress = document.querySelectorAll('.mobile-steps div');
+    const desktopStepsProgress = document.querySelectorAll('.desktop-steps div')
+
+    const handlingSteps = {
+        forward: {
+            2: () => {
+                desktopStepsProgress[1].classList.add('progress');
+                mobileStepsProgress[1].classList.add('progress');
+            },
+            4: () => {
+                desktopStepsProgress[2].classList.add('progress');
+                mobileStepsProgress[2].classList.add('progress');
+            },
+        },
+        backward: {
+            1: () => {
+                desktopStepsProgress[0].classList.add('progress');
+                mobileStepsProgress[0].classList.add('progress');
+            },
+            2: () => {
+                desktopStepsProgress[1].classList.remove('progress');
+                mobileStepsProgress[1].classList.remove('progress');
+            },
+        },
+    };
+
+    if (handlingSteps[direction] && handlingSteps[direction][nextStep]) {
+        handlingSteps[direction][nextStep]();
+    }
+}
+

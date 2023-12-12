@@ -19,6 +19,14 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
+                    .hide {
+                        display: none;
+                    }
+
+                    .show {
+                        display: block;
+                    }
     
                     h2 {
                         font-size: $font-size-extra-large;
@@ -31,23 +39,52 @@
                         font-weight: $font-weight-bold;
                         color: $primary-color;
                     }
-                }
+
+                    .back-btn {
+                        display: none;
+                        align-items: center;
+                        gap: 7px;
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+
+                        &.hide {
+                            display: none;
+                        }
     
-                &__steps {
-                    display: flex;
-                    justify-content: space-between;
-    
-                    div {
-                        width: 33%;
-                        height: 5px;
-                        background-color: #D9D9D9;
-                        
-                        &:first-child {
-                            background-color: $primary-color;
+                        &.show {
+                            display: flex;
+                        }
+
+                        p {
+                            color: $text-color
+                        }
+
+                        svg {
+                            rotate: 180deg;
+                            position: relative;
+                            left: 2px;
+                            transition: left $transition-delay;
+                            path {
+                                fill: $text-color
+                            }
+                        }
+
+                        &:hover {
+                            p {
+                                color: $primary-color
+                            }
+
+                            svg {
+                                left: 0;
+                                path {
+                                    fill: $primary-color;
+                                }
+                            }
                         }
                     }
-                    
                 }
+    
             }
     
     

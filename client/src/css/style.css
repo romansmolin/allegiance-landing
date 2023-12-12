@@ -95,6 +95,10 @@ h3 {
   outline: 0;
 }
 
+.main .progress {
+  background-color: #32B966;
+}
+
 .submit {
   background-color: #32B966;
   border: none;
@@ -129,14 +133,22 @@ h3 {
 
 .mobile-steps {
   display: none;
+}
+
+.desktop-steps {
+  display: flex;
+}
+
+.mobile-steps, .desktop-steps {
   justify-content: space-between;
 }
-.mobile-steps div {
+.mobile-steps div, .desktop-steps div {
   width: 33%;
   height: 5px;
   background-color: #D9D9D9;
+  transition: background-color 0.5s ease-out;
 }
-.mobile-steps div:first-child {
+.mobile-steps div:first-child, .desktop-steps div:first-child {
   background-color: #32B966;
 }
 
@@ -209,6 +221,12 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+.main__form__header__progress-bar__navigation .hide {
+  display: none;
+}
+.main__form__header__progress-bar__navigation .show {
+  display: block;
+}
 .main__form__header__progress-bar__navigation h2 {
   font-size: 24px;
   font-weight: 700;
@@ -219,17 +237,40 @@ h3 {
   font-weight: 700;
   color: #32B966;
 }
-.main__form__header__progress-bar__steps {
+.main__form__header__progress-bar__navigation .back-btn {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.main__form__header__progress-bar__navigation .back-btn.hide {
+  display: none;
+}
+.main__form__header__progress-bar__navigation .back-btn.show {
   display: flex;
-  justify-content: space-between;
 }
-.main__form__header__progress-bar__steps div {
-  width: 33%;
-  height: 5px;
-  background-color: #D9D9D9;
+.main__form__header__progress-bar__navigation .back-btn p {
+  color: #263238;
 }
-.main__form__header__progress-bar__steps div:first-child {
-  background-color: #32B966;
+.main__form__header__progress-bar__navigation .back-btn svg {
+  rotate: 180deg;
+  position: relative;
+  left: 2px;
+  transition: left 0.3s;
+}
+.main__form__header__progress-bar__navigation .back-btn svg path {
+  fill: #263238;
+}
+.main__form__header__progress-bar__navigation .back-btn:hover p {
+  color: #32B966;
+}
+.main__form__header__progress-bar__navigation .back-btn:hover svg {
+  left: 0;
+}
+.main__form__header__progress-bar__navigation .back-btn:hover svg path {
+  fill: #32B966;
 }
 .main__form__companies {
   display: flex;

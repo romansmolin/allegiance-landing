@@ -23,7 +23,7 @@
     </header>
 
     <main class="main" id="main">
-        <div class="mobile-steps">
+        <div class="mobile-steps steps-progress ">
             <div></div>
             <div></div>
             <div></div>
@@ -34,12 +34,30 @@
                     <h1>Get Your Free Estimate</h1>
                     <div class="main__form__header__progress-bar">
                         <div class="main__form__header__progress-bar__navigation">
+                            <button 
+                                class="back-btn"
+                                type="button"
+                                onclick="navigateStep('backward')"
+                             >
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_356_114)">
+                                    <path d="M11.9512 11.4963L14.4006 9.0469C14.7983 8.63011 15.0202 8.07614 15.0202 7.50002C15.0202 6.92391 14.7983 6.36994 14.4006 5.95315L11.9512 3.50377C11.7754 3.3279 11.5369 3.22906 11.2883 3.229C11.0396 3.22895 10.8011 3.32767 10.6252 3.50346C10.4494 3.67925 10.3505 3.9177 10.3505 4.16636C10.3504 4.41502 10.4491 4.65353 10.6249 4.8294L12.3624 6.56752L0.956177 6.5819C0.707536 6.5819 0.46908 6.68067 0.293264 6.85649C0.117449 7.0323 0.0186768 7.27076 0.0186768 7.5194C0.0186768 7.76804 0.117449 8.0065 0.293264 8.18231C0.46908 8.35813 0.707536 8.4569 0.956177 8.4569L12.3506 8.44252L10.6249 10.1707C10.4542 10.3475 10.3597 10.5843 10.3618 10.8301C10.3639 11.0759 10.4625 11.311 10.6363 11.4849C10.8102 11.6587 11.0453 11.7573 11.2911 11.7594C11.5369 11.7615 11.7737 11.667 11.9506 11.4963H11.9512Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_356_114">
+                                    <rect width="15" height="15" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    
+                                <p>Back</p>
+                            </button>
                             <h2>Move With Ease!</h2>
                             <h2 class="mobile__headeaing">Get Your Free Estimate</h2>
                             <p>Step <span id="step-counter">1</span> of 3</p>
                         </div>
-                        <div class="main__form__header__progress-bar__steps">
-                            <div></div>
+                        <div class="main__form__header__progress-bar__steps desktop-steps steps-progress">
+                            <div class="progress"></div>
                             <div></div>
                             <div></div>
                         </div>

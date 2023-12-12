@@ -96,6 +96,10 @@ h3 {
 
 }
 
+.main .progress {
+    background-color: $primary-color;
+}
+
 .submit {
     background-color: $primary-color;
     border: none;
@@ -134,12 +138,21 @@ h3 {
 
 .mobile-steps {
     display: none;
+}
+
+.desktop-steps {
+    display: flex;
+}
+
+.mobile-steps, .desktop-steps {
     justify-content: space-between;
 
     div {
         width: 33%;
         height: 5px;
         background-color: #D9D9D9;
+        transition: background-color .5s ease-out;
+        
 
         &:first-child {
             background-color: $primary-color;
