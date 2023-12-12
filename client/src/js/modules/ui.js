@@ -3,62 +3,56 @@ const formCompanies = document.querySelector('.main__form__companies');
 const footerDiscalimer = document.querySelector('.main__footer__disclaimer');
 const loaderText = document.querySelector(".loader__text");
 
-function displayFormHeaderAndFooter(isShow) {
-    if (!isShow) {
-        formHeader.style.display = 'none';
-        formCompanies.style.display = 'none';
-        footerDiscalimer.style.display = 'none';
-    } else {
-        formHeader.style.display = 'flex';
-        formCompanies.style.display = 'flex';
-        footerDiscalimer.style.display = 'block';
-    }     
-}
-
-function stickFooterToBottom(step) {
-    const main = document.getElementById('main');
-    const mainFooter = document.querySelector('.main__footer');
-
-    main.classList.add(`main__heigth_step-${step}`);
-    mainFooter.classList.add(`footer-step-${step}`);
-}
-
-//HANDLING NEXT STEPS IN FORM
-
 function navigateStep(nextStep, currentStep) {
-
     hideAllSteps(currentStep);
-    document.getElementById(`step-${nextStep}`).style.display = "flex";
+    const nextStepElement = document.getElementById(`step-${nextStep}`).style.display = "flex";
 
-    if (isStepVisible(3)) {
-        displayFormHeaderAndFooter(false)
-        stickFooterToBottom(3)
-        activateLoader();
+    if (!nextStepElement) {
+        console.error(`Step element not found: step-${nextStep}`);
+        return;
     }
 
-    if (isStepVisible(5)) {
-        stickFooterToBottom(5)
+    const handleStepsObj = {
+        3: handleStep3,
+        4: () => stickFooterToBottom(3, true),
+        5: () => stickFooterToBottom(5),
+        6: () => handleStep6,
     }
 
-    if (isStepVisible(6)) {
-        const headerPhoneLink = document.querySelector('.form__header__phone');
-        const companiesFooter = document.querySelector('.companies');
+    const handler = handleStepsObj[nextStep];
 
-        stickFooterToBottom(6)
+    if (handler) {
+        handler();
+    }
+}
 
+function handleStep3() {
+    displayFormHeaderAndFooter(false);
+    stickFooterToBottom(3);
+    activateLoader();
+}
+
+function handleStep6() {
+    const headerPhoneLink = document.querySelector('.form__header__phone');
+    const companiesFooter = document.querySelector('.companies');
+
+    stickFooterToBottom(6);
+    stickFooterToBottom(6, true); // Remove classes
+
+    if (headerPhoneLink) {
         headerPhoneLink.style.display = "none";
+    }
+
+    if (companiesFooter) {
         companiesFooter.style.display = "none";
     }
 }
-
 
 function hideAllSteps(currentStep) {
     let step = document.querySelector(`.step-${currentStep}`);
     step.style.display = "none"
 }
 
-
-// Function to simulate loading with a delay
 function simulateLoading(delay) {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -66,8 +60,6 @@ function simulateLoading(delay) {
         }, delay);
     });
 }
-
-// LOADER
 
 function activateLoader() {
     const loaderContainer = document.querySelector('.loader__container');

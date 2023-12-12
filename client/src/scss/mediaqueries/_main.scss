@@ -1,0 +1,18 @@
+.main {
+    &__form {
+        margin-top: unset;
+
+        &__header {
+            h1 {
+                display: none;
+            }
+
+            &__progress-bar {
+
+                &__steps {
+                    display: none;
+                }
+            }
+        }
+    }
+}

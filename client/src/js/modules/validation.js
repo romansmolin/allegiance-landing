@@ -139,15 +139,15 @@ async function validateFirstStep() {
             ]);
 
             if (dzipResponse.status === "ZERO_RESULTS") {
-                filedsToValidate[0].errorSpan.textContent = 'Please enter existing zip code';
+                filedsToValidate[1].errorSpan.textContent = 'Please enter existing zip code';
                 errors.push('Moving From Error')
-                setValidationIcon('ozip', false)
+                setValidationIcon('dzip', false)
             } 
 
             if (ozipResponse.status === "ZERO_RESULTS") {
-                filedsToValidate[1].errorSpan.textContent = 'Please enter existing zip code';
+                filedsToValidate[0].errorSpan.textContent = 'Please enter existing zip code';
                 errors.push('Moving To Error')
-                setValidationIcon('dzip', false)
+                setValidationIcon('ozip', false)
             } 
 
             if (errors.length > 0) {
@@ -262,9 +262,6 @@ async function validateOtp(errorId) {
             // });
         }
     } else {
-        otpInputs.forEach((input) => {
-            input.classList.add("error");
-        });
         errorSpan.textContent = "Please enter a valid PIN code.";
     }
 

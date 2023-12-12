@@ -61,3 +61,28 @@ function validateFieldsOnChangingStep(filedsToValidate) {
         }
     }
 }
+
+function displayFormHeaderAndFooter(isShow) {
+    if (!isShow) {
+        formHeader.style.display = 'none';
+        formCompanies.style.display = 'none';
+        footerDiscalimer.style.display = 'none';
+    } else {
+        formHeader.style.display = 'flex';
+        formCompanies.style.display = 'flex';
+        footerDiscalimer.style.display = 'block';
+    }
+}
+
+function stickFooterToBottom(step, isDelete = false) {
+    const main = document.getElementById('main');
+    const mainFooter = document.querySelector('.main__footer');
+
+    if (isDelete) {
+        main.classList.remove(`main__heigth_step-${step}`);
+        mainFooter.classList.remove(`footer-step-${step}`);
+    } else {
+        main.classList.add(`main__heigth_step-${step}`);
+        mainFooter.classList.add(`footer-step-${step}`);
+    }
+}
