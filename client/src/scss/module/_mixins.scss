@@ -1,4 +1,8 @@
 @mixin form-step-column-gap {
     flex-direction: column;
     gap: 20px;
+
+    @media only screen and (max-width: 991.98px) {
+      gap: unset;
+    }
   }

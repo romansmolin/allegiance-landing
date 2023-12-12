@@ -1,0 +1,42 @@
+@media only screen and (max-width: 991.98px) {
+    .main {
+        &__form {
+            .step-2 {
+                .input-wrapper {
+                    .choise-buttons {
+                        &.property {
+                            .button {
+                                height: 74px;
+
+                                &:first-child {
+                                    p {
+                                        margin-left: 20px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    p {
+                                        margin-left: 47px;
+
+                                    }
+                                }
+                            }
+                        }
+
+                        &.date {
+                            .button {
+                                height: 97px;
+                            }
+                        }
+
+                        &.size {
+                            .button.size-btn {
+                                height: 87px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

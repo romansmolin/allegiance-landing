@@ -87,6 +87,10 @@
 .main__heigth_step-5,
 .main__heigth_step-6 {
     height: calc(100% - 76px);
+
+    .mobile-steps {
+        display: none;
+    }
 }
 
 .footer-step-3,
@@ -96,4 +100,8 @@
     bottom: 0;
     right: 50%;
     transform: translateX(50%);
+
+    .mobile-steps {
+        display: none;
+    }
 }

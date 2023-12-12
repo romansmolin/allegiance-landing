@@ -1,18 +1,39 @@
-.main {
-    &__form {
-        margin-top: unset;
+@media only screen and (max-width: 991.98px) {
+    .main {
+        &__form {
+            margin-top: unset;
+    
+            &__header {
+                h1 {
+                    display: none;
+                }
+    
+                &__progress-bar {
 
-        &__header {
-            h1 {
-                display: none;
+                    &__navigation {
+                        h2 {
+                            font-size: $font-size-large;
+                        }
+
+                        h2:not(.mobile__headeaing) {
+                            display: none;
+                        }            
+                    }
+    
+                    &__steps {
+                        display: none;
+                    }
+                }
             }
 
-            &__progress-bar {
+            &__footer {
+                width: 100%;
 
-                &__steps {
-                    display: none;
+                span {
+                    font-weight: $font-weight-semibold;
                 }
             }
         }
     }
 }
+

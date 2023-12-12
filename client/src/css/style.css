@@ -127,9 +127,40 @@ h3 {
   }
 }
 
+.mobile-steps {
+  display: none;
+  justify-content: space-between;
+}
+.mobile-steps div {
+  width: 33%;
+  height: 5px;
+  background-color: #D9D9D9;
+}
+.mobile-steps div:first-child {
+  background-color: #32B966;
+}
+
+.mobile__headeaing {
+  display: none;
+}
+
 @media only screen and (max-width: 991.98px) {
   .container {
+    margin-top: 16px;
     padding: 0px 22px;
+  }
+  .mobile-steps {
+    display: flex;
+  }
+  .mobile__headeaing {
+    display: block;
+  }
+  .input-wrapper h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .submit {
+    margin-top: 15px;
   }
 }
 .header {
@@ -230,6 +261,11 @@ h3 {
 .main__heigth_step-6 {
   height: calc(100% - 76px);
 }
+.main__heigth_step-3 .mobile-steps,
+.main__heigth_step-5 .mobile-steps,
+.main__heigth_step-6 .mobile-steps {
+  display: none;
+}
 
 .footer-step-3,
 .footer-step-5,
@@ -239,17 +275,32 @@ h3 {
   right: 50%;
   transform: translateX(50%);
 }
+.footer-step-3 .mobile-steps,
+.footer-step-5 .mobile-steps,
+.footer-step-6 .mobile-steps {
+  display: none;
+}
 
 .main__form .step-1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-1 {
+    gap: unset;
+  }
+}
 
 .main__form .step-2 {
   display: none;
   flex-direction: column;
   gap: 20px;
+}
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-2 {
+    gap: unset;
+  }
 }
 .main__form .step-2 .input-wrapper .choise-buttons {
   display: flex;
@@ -319,7 +370,7 @@ h3 {
 }
 .main__form .step-2 .input-wrapper .choise-buttons.date .button p, .main__form .step-2 .input-wrapper .choise-buttons.size .button p {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   color: #263238;
 }
@@ -450,11 +501,21 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-4 {
+    gap: unset;
+  }
+}
 
 .main__form .step-5 {
   display: none;
   flex-direction: column;
   gap: 20px;
+}
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-5 {
+    gap: unset;
+  }
 }
 .main__form .step-5 .input-wrapper h2 {
   text-align: center;
@@ -491,6 +552,11 @@ h3 {
   display: none;
   flex-direction: column;
   gap: 20px;
+}
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-6 {
+    gap: unset;
+  }
 }
 .main__form .step-6 p {
   font-size: 16px;
@@ -563,21 +629,53 @@ h3 {
     background: url("../icons/phone_icon.svg") center center/contain no-repeat;
   }
 }
-.main__form {
-  margin-top: unset;
+@media only screen and (max-width: 991.98px) {
+  .main__form {
+    margin-top: unset;
+  }
+  .main__form__header h1 {
+    display: none;
+  }
+  .main__form__header__progress-bar__navigation h2 {
+    font-size: 20px;
+  }
+  .main__form__header__progress-bar__navigation h2:not(.mobile__headeaing) {
+    display: none;
+  }
+  .main__form__header__progress-bar__steps {
+    display: none;
+  }
+  .main__form__footer {
+    width: 100%;
+  }
+  .main__form__footer span {
+    font-weight: 600;
+  }
 }
-.main__form__header h1 {
-  display: none;
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-2 .input-wrapper .choise-buttons.property .button {
+    height: 74px;
+  }
+  .main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child p {
+    margin-left: 20px;
+  }
+  .main__form .step-2 .input-wrapper .choise-buttons.property .button:last-child p {
+    margin-left: 47px;
+  }
+  .main__form .step-2 .input-wrapper .choise-buttons.date .button {
+    height: 97px;
+  }
+  .main__form .step-2 .input-wrapper .choise-buttons.size .button.size-btn {
+    height: 87px;
+  }
 }
-.main__form__header__progress-bar__steps {
-  display: none;
-}
-
-.main__form .step-5, .main__form .step-6 {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  padding: 0px 22px;
+@media only screen and (max-width: 991.98px) {
+  .main__form .step-5, .main__form .step-6 {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 0px 22px;
+  }
 }/*# sourceMappingURL=style.css.map */

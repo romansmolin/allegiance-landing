@@ -1,0 +1,9 @@
+.main {
+    &__form {
+        .step-6 {
+            &__final-text {
+                margin-top: unset;
+            }
+        }
+    }
+}

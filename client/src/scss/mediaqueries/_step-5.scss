@@ -1,12 +1,14 @@
-.main {
-    &__form {
-        .step-5, .step-6 {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%);
-            padding: 0px 22px;
+@media only screen and (max-width: 991.98px) {
+    .main {
+        &__form {
+            .step-5, .step-6 {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+                padding: 0px 22px;
+            }
         }
     }
 }
