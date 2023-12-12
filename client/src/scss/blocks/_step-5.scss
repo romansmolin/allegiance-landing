@@ -1,0 +1,46 @@
+.main {
+    &__form {
+        .step-5 {
+            display: none;
+            @include form-step-column-gap;
+
+            .input-wrapper {
+                h2 {
+                    text-align: center;
+                    color: $text-color;
+                }
+    
+                .otp-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-top: 30px;
+    
+                    .otp-input {
+                        width: 23%;
+                        height: 45px;
+                        text-align: center;
+                        font-weight: $font-weight-medium;
+                        padding: 0px;
+                        border: 0.1px solid #afc1c9;
+    
+                        -moz-appearance: none;
+                        appearance: none;
+    
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+    
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}

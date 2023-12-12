@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fafafa;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.5;
+  color: #263238;
+}
+
+.container {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 170px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.input-wrapper h3 {
+  margin-bottom: 15px;
+}
+.input-wrapper .input-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 46%;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  border: 0.1px solid #afc1c9;
+  height: 50px;
+  padding-left: 16px;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: #263238;
+}
+.form-input__error {
+  text-align: right;
+  color: #32B966;
+  font-weight: 700;
+  font-size: 16px;
+  height: 15px;
+}
+.form-input::-moz-placeholder {
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 700;
+  color: #263238;
+}
+.form-input::placeholder {
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 700;
+  color: #263238;
+}
+.form-input:focus-visible {
+  border: 1px solid #5e696e;
+  outline: 0;
+}
+
+.submit {
+  background-color: #32B966;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+  height: 52px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+  width: 100%;
+  position: relative;
+}
+.submit img {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, right 0.3s;
+}
+@media (min-width: 992px) {
+  .submit:hover {
+    background-color: #297747;
+  }
+  .submit:hover img {
+    opacity: 1;
+    right: 15px;
+  }
+}
+
+.header {
+  position: relative;
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 18px;
+  background-color: #ffffff;
+}
+.header__phone a {
+  color: #32B966;
+  font-size: 32px;
+  font-weight: 700;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__phone a::before {
+  content: url("../icons/phone_icon.svg");
+  display: block;
+  height: 30px;
+  width: 40px;
+}
+
+.main__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 88px;
+}
+.main__form__header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.main__form__header__progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main__form__header__progress-bar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__form__header__progress-bar__navigation h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #263238;
+}
+.main__form__header__progress-bar__navigation p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #32B966;
+}
+.main__form__header__progress-bar__steps {
+  display: flex;
+  justify-content: space-between;
+}
+.main__form__header__progress-bar__steps div {
+  width: 33%;
+  height: 5px;
+  background-color: #D9D9D9;
+}
+.main__form__header__progress-bar__steps div:first-child {
+  background-color: #32B966;
+}
+.main__form__companies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 33px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.main__footer p {
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+}
+.main__footer span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.main__heigth_step-3,
+.main__heigth_step-5,
+.main__heigth_step-6 {
+  height: calc(100% - 76px);
+}
+
+.footer-step-3,
+.footer-step-5,
+.footer-step-6 {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.main__form .step-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main__form .step-2 {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons {
+  display: flex;
+  justify-content: center;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button {
+  flex: 1;
+  cursor: pointer;
+  border: 0.1px solid #afc1c9;
+  background-color: transparent;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #263238;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child {
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child.selected, .main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child:hover {
+  border-right: 1px solid #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child.selected + button, .main__form .step-2 .input-wrapper .choise-buttons.property .button:first-child:hover + button {
+  border-left: none;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button:last-child p {
+  margin-left: 25px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button.selected, .main__form .step-2 .input-wrapper .choise-buttons.property .button:hover {
+  border: 1px solid #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button.selected p, .main__form .step-2 .input-wrapper .choise-buttons.property .button:hover p {
+  color: #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.property .button.selected svg path, .main__form .step-2 .input-wrapper .choise-buttons.property .button:hover svg path {
+  fill: #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button, .main__form .step-2 .input-wrapper .choise-buttons.size .button {
+  flex: 1;
+  cursor: pointer;
+  border: 0.1px solid #afc1c9;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button p, .main__form .step-2 .input-wrapper .choise-buttons.size .button p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #263238;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button:not(:last-child), .main__form .step-2 .input-wrapper .choise-buttons.size .button:not(:last-child) {
+  border-right: none;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button:not(:last-child).selected, .main__form .step-2 .input-wrapper .choise-buttons.date .button:not(:last-child):hover, .main__form .step-2 .input-wrapper .choise-buttons.size .button:not(:last-child).selected, .main__form .step-2 .input-wrapper .choise-buttons.size .button:not(:last-child):hover {
+  border-right: 1px solid #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button:not(:last-child).selected + button, .main__form .step-2 .input-wrapper .choise-buttons.date .button:not(:last-child):hover + button, .main__form .step-2 .input-wrapper .choise-buttons.size .button:not(:last-child).selected + button, .main__form .step-2 .input-wrapper .choise-buttons.size .button:not(:last-child):hover + button {
+  border-left: none;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button:first-child, .main__form .step-2 .input-wrapper .choise-buttons.size .button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button:last-child, .main__form .step-2 .input-wrapper .choise-buttons.size .button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.selected, .main__form .step-2 .input-wrapper .choise-buttons.date .button:hover, .main__form .step-2 .input-wrapper .choise-buttons.size .button.selected, .main__form .step-2 .input-wrapper .choise-buttons.size .button:hover {
+  border-color: #32B966;
+  border: 1px solid #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.selected p, .main__form .step-2 .input-wrapper .choise-buttons.date .button:hover p, .main__form .step-2 .input-wrapper .choise-buttons.size .button.selected p, .main__form .step-2 .input-wrapper .choise-buttons.size .button:hover p {
+  color: #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.selected svg path, .main__form .step-2 .input-wrapper .choise-buttons.date .button:hover svg path, .main__form .step-2 .input-wrapper .choise-buttons.size .button.selected svg path, .main__form .step-2 .input-wrapper .choise-buttons.size .button:hover svg path {
+  fill: #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.size-btn, .main__form .step-2 .input-wrapper .choise-buttons.size .button.size-btn {
+  height: 80px;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.size-btn span, .main__form .step-2 .input-wrapper .choise-buttons.size .button.size-btn span {
+  font-size: 32px;
+  font-weight: 500;
+  color: #263238;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button.size-btn.selected span, .main__form .step-2 .input-wrapper .choise-buttons.date .button.size-btn:hover span, .main__form .step-2 .input-wrapper .choise-buttons.size .button.size-btn.selected span, .main__form .step-2 .input-wrapper .choise-buttons.size .button.size-btn:hover span {
+  color: #32B966;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button {
+  height: 90px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.date .button svg {
+  height: 35px;
+}
+.main__form .step-2 .input-wrapper .choise-buttons.size .button {
+  height: 80px;
+}
+
+.step-3 {
+  display: none;
+}
+.step-3 .loader__container {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, -50%);
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto;
+  flex: 1;
+}
+.step-3 .loader__container .loader {
+  color: #000;
+  font-size: 10px;
+  margin: 50px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: load4 1.3s infinite linear;
+  transform: translateZ(0);
+}
+.step-3 .loader__container .loader__text {
+  margin-top: 25px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.step-3 .loader__container .success {
+  border-radius: 50%;
+  display: none;
+  height: 125px;
+  width: 125px;
+  background-color: #32B966;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes load4 {
+  0%, 100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+.main__form .step-4 {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main__form .step-5 {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+.main__form .step-5 .input-wrapper h2 {
+  text-align: center;
+  color: #263238;
+}
+.main__form .step-5 .input-wrapper .otp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+.main__form .step-5 .input-wrapper .otp-container .otp-input {
+  width: 23%;
+  height: 45px;
+  text-align: center;
+  font-weight: 500;
+  padding: 0px;
+  border: 0.1px solid #afc1c9;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.main__form .step-5 .input-wrapper .otp-container .otp-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main__form .step-5 .input-wrapper .otp-container .otp-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main__form .step-6 {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+.main__form .step-6 p {
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.5;
+  color: #263238;
+  text-align: center;
+  margin-top: 11px;
+}
+.main__form .step-6__final {
+  margin: auto;
+}
+.main__form .step-6__final-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.main__form .step-6__final-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  margin-top: 30px;
+}
+.main__form .step-6__cta-button {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main__form .step-6__cta-button p {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 600;
+  color: #263238;
+}
+.main__form .step-6__cta-button button {
+  margin: 0;
+}
+.main__form .step-6__cta-button button a {
+  color: #ffffff;
+  width: 100%;
+  font-size: 24px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 18px;
+    background-color: #ffffff;
+
+    &__phone {
+        a {
+            color: $primary-color;
+            font-size: 32px;
+            font-weight: $font-weight-bold;
+            word-wrap: break-word;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            &::before {
+                content: url('../icons/phone_icon.svg');
+                display: block;
+                height: 30px;
+                width: 40px;
+            }
+        }
+    }
+}

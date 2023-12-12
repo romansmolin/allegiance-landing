@@ -1,0 +1,8 @@
+.main {
+    &__form {
+        .step-1 {
+            display: flex;
+            @include form-step-column-gap;
+        }
+    }
+}

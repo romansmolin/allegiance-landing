@@ -1,0 +1,179 @@
+.main {
+    &__form {
+        .step-2 {
+            display: none;
+            @include form-step-column-gap;
+
+            .input-wrapper {
+                .choise-buttons {
+                    display: flex;
+                    justify-content: center;
+
+                    &.property {
+                        .button {
+                            flex: 1;
+                            cursor: pointer;
+                            border: 0.1px solid #afc1c9;
+                            background-color: transparent;
+                            height: 60px;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+        
+                            p {
+                                font-size: $font-size-medium;
+                                font-weight: $font-weight-semibold;
+                                color: $text-color;
+                            }
+        
+                            svg {
+                                position: absolute;
+                                left: 10px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+        
+                            &:first-child {
+                                border-right: none;
+                                border-top-left-radius: 5px;
+                                border-bottom-left-radius: 5px;
+                                
+                                &.selected,
+                                &:hover {
+                                    border-right: 1px solid $primary-color;
+        
+                                    +button {
+                                        border-left: none;
+                                    }
+                                }
+                            }
+        
+                            &:last-child {
+                                border-top-right-radius: 5px;
+                                border-bottom-right-radius: 5px;
+        
+                                p {
+                                    margin-left: 25px;
+                                }
+                            }
+        
+                            &.selected,
+                            &:hover {
+                                border: 1px solid $primary-color;
+        
+                                p {
+                                    color: $primary-color;
+                                }
+        
+                                svg {
+                                    path {
+                                        fill: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.date, &.size {
+                        .button {
+                            flex: 1;
+                            cursor: pointer;
+                            border: 0.1px solid #afc1c9;
+                            background-color: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            flex-direction: column;
+                            gap: 10px;
+                            padding: 0;
+                            margin: 0;
+        
+                            p {
+                                font-size: $font-size-medium;
+                                font-weight: $font-weight-medium;
+                                margin: 0;
+                                color: $text-color;
+                            }
+        
+                            &:not(:last-child) {
+                                border-right: none;
+        
+                                &.selected,
+                                &:hover {
+                                    border-right: 1px solid $primary-color;
+        
+                                    +button {
+                                        border-left: none;
+                                    }
+                                }
+                            }
+        
+                            &:first-child {
+                                border-top-left-radius: 5px;
+                                border-bottom-left-radius: 5px;
+                            }
+        
+                            &:last-child {
+                                border-top-right-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+        
+                            &.selected,
+                            &:hover {
+                                border-color: $primary-color;
+                                border: 1px solid $primary-color;
+        
+                                p {
+                                    color: $primary-color;
+                                }
+        
+                                svg {
+                                    path {
+                                        fill: $primary-color;
+                                    }
+                                }
+                            }
+        
+                            &.size-btn {
+                                height: 80px;
+                                gap: 0;
+                                padding: 0;
+                                margin: 0;
+        
+                                span {
+                                    font-size: 32px;
+                                    font-weight: $font-weight-medium;
+                                    color: $text-color;
+                                }
+        
+                                &.selected,
+                                &:hover {
+                                    span {
+                                        color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.date {
+                        .button {
+                            height: 90px;
+
+                            svg {
+                                height: 35px;
+                            }
+                        }
+                    }
+
+                    &.size {
+                        .button {
+                            height: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
