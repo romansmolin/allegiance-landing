@@ -1,5 +1,7 @@
 @media only screen and (max-width: 991.98px) {
     .main {
+        max-width: unset;
+
         &__form {
             margin-top: unset;
     
@@ -10,6 +12,12 @@
     
                 &__progress-bar {
 
+                    &.show {
+                        .back-btn {
+                            display: none;
+                        }
+                    }
+
                     &__navigation {
                         h2 {
                             font-size: $font-size-large;
@@ -17,7 +25,8 @@
 
                         h2:not(.mobile__headeaing) {
                             display: none;
-                        }            
+                        } 
+                        
                     }
     
                     &__steps {
@@ -33,6 +42,15 @@
                     font-weight: $font-weight-semibold;
                 }
             }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1350.98px) {
+    .main {
+        .background-img {
+            display: none;
         }
     }
 }

@@ -200,6 +200,10 @@ h3 {
   width: 40px;
 }
 
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .main__form {
   display: flex;
   flex-direction: column;
@@ -216,16 +220,22 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
+.main__form__header__progress-bar.show .back-btn {
+  display: flex;
+}
+.main__form__header__progress-bar.show .desktop__heading {
+  display: none;
+}
+.main__form__header__progress-bar.hide .back-btn {
+  display: none;
+}
+.main__form__header__progress-bar.hide .desktop__heading {
+  display: inline;
+}
 .main__form__header__progress-bar__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.main__form__header__progress-bar__navigation .hide {
-  display: none;
-}
-.main__form__header__progress-bar__navigation .show {
-  display: block;
 }
 .main__form__header__progress-bar__navigation h2 {
   font-size: 24px;
@@ -295,6 +305,16 @@ h3 {
   font-size: 14px;
   font-weight: 500;
   color: #000;
+}
+.main .background-img {
+  position: absolute;
+  bottom: 0;
+}
+.main .background-img.left-side {
+  left: 0;
+}
+.main .background-img.right-side {
+  right: 0;
 }
 
 .main__heigth_step-3,
@@ -588,6 +608,15 @@ h3 {
   -webkit-appearance: none;
   margin: 0;
 }
+.main.main__heigth_step-5 .container {
+  height: 100%;
+}
+.main.main__heigth_step-5 .container .main__form {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: unset;
+}
 
 .main__form .step-6 {
   display: none;
@@ -645,6 +674,15 @@ h3 {
   width: 100%;
   font-size: 24px;
 }
+.main.main__heigth_step-6 .container {
+  height: 100%;
+}
+.main.main__heigth_step-6 .container .main__form {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: unset;
+}
 
 @media only screen and (max-width: 991.98px) {
   .header {
@@ -671,10 +709,16 @@ h3 {
   }
 }
 @media only screen and (max-width: 991.98px) {
+  .main {
+    max-width: unset;
+  }
   .main__form {
     margin-top: unset;
   }
   .main__form__header h1 {
+    display: none;
+  }
+  .main__form__header__progress-bar.show .back-btn {
     display: none;
   }
   .main__form__header__progress-bar__navigation h2 {
@@ -691,6 +735,11 @@ h3 {
   }
   .main__form__footer span {
     font-weight: 600;
+  }
+}
+@media only screen and (max-width: 1350.98px) {
+  .main .background-img {
+    display: none;
   }
 }
 @media only screen and (max-width: 991.98px) {

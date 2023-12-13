@@ -1,4 +1,7 @@
 .main {
+    max-width: 1440px;
+    margin: 0 auto;
+
     &__form {
         display: flex;
         flex-direction: column;
@@ -14,19 +17,31 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+
+                &.show {
+                    .back-btn {
+                        display: flex;
+                    }
+
+                    .desktop__heading {
+                        display: none;
+                    }
+                }
+
+                &.hide {
+                    .back-btn {
+                        display: none;
+                    }
+
+                    .desktop__heading {
+                        display: inline;
+                    }
+                }
     
                 &__navigation {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-
-                    .hide {
-                        display: none;
-                    }
-
-                    .show {
-                        display: block;
-                    }
     
                     h2 {
                         font-size: $font-size-extra-large;
@@ -87,7 +102,6 @@
     
             }
     
-    
         }
 
         &__companies {
@@ -116,6 +130,19 @@
             font-size: $font-size-small;
             font-weight: $font-weight-medium;
             color: #000;
+        }
+    }
+
+    .background-img {
+        position: absolute;
+        bottom: 0;
+
+        &.left-side {
+            left: 0;
+        }
+
+        &.right-side {
+            right: 0;
         }
     }
 }

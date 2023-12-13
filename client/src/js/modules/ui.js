@@ -23,9 +23,6 @@ function navigateStep(direction = "forward") {
         }
     }
 
-    console.log('Current step - ' + currentStep);
-    console.log('Next step - ' + nextStep);
-
     const nextStepElement = document.getElementById(`step-${nextStep}`).style.display = "flex";
 
     if (!nextStepElement) {
@@ -33,13 +30,27 @@ function navigateStep(direction = "forward") {
         return;
     }
 
+    const changeStepCounter = (step) => {
+        const stepCounterSpan = document.getElementById('step-counter')
+        stepCounterSpan.textContent = step;
+    }
+
     const handleStepsObj = {
-        1: () => showBackBtn(false),
-        2: () => showBackBtn(true),
+        1: () => {
+            showBackBtn(false)
+            changeStepCounter(1)
+        },
+        2: () => {
+            showBackBtn(true)
+            changeStepCounter(2)
+        },
         3: handleStep3,
-        4: () => stickFooterToBottom(3, true),
+        4: () => {
+            stickFooterToBottom(3, true)
+            changeStepCounter(3)
+        },
         5: () => stickFooterToBottom(5),
-        6: () => handleStep6,
+        6: handleStep6,
     }
 
     const handler = handleStepsObj[nextStep];
@@ -62,8 +73,8 @@ function handleStep6() {
     const headerPhoneLink = document.querySelector('.form__header__phone');
     const companiesFooter = document.querySelector('.companies');
 
+    stickFooterToBottom(5, true); // Remove classes
     stickFooterToBottom(6);
-    stickFooterToBottom(6, true); // Remove classes
 
     if (headerPhoneLink) {
         headerPhoneLink.style.display = "none";
@@ -75,12 +86,11 @@ function handleStep6() {
 }
 
 function showBackBtn(isShow = false) {
-    const backBtn = document.querySelector('.back-btn');
-    const adjacentH2 = backBtn.nextElementSibling;
-
+    const progressBar = document.querySelector('.main__form__header__progress-bar');
+    
     isShow 
-        ? (backBtn.classList.add('show'), adjacentH2.classList.add('hide')) 
-        : (backBtn.classList.remove('show'), adjacentH2.classList.remove('hide'));
+        ? (progressBar.classList.add('show')) 
+        : (progressBar.classList.remove('show'));
 }
 
 function hideAllSteps(currentStep) {

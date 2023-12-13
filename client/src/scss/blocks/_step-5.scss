@@ -43,4 +43,17 @@
             }
         }
     }
+
+    &.main__heigth_step-5 {
+        .container {
+            height: 100%;
+            
+            .main__form {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: unset;
+            }
+        }
+    }
 }
