@@ -123,7 +123,7 @@ function activateLoader() {
             //     'event_label': `third-step-loading-completed`,
             // });
             displayFormHeaderAndFooter(true);
-            navigateStep("forward");
+            // navigateStep("forward");
         })
         .catch(error => {
             console.error('An error occurred:', error);

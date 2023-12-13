@@ -334,11 +334,7 @@ h3 {
   bottom: 0;
   right: 50%;
   transform: translateX(50%);
-}
-.footer-step-3 .mobile-steps,
-.footer-step-5 .mobile-steps,
-.footer-step-6 .mobile-steps {
-  display: none;
+  width: 90%;
 }
 
 .main__form .step-1 {
