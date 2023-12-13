@@ -41,7 +41,8 @@
                                 &.selected,
                                 &:hover {
                                     border-right: 1px solid $primary-color;
-        
+                                    box-shadow: inset 0 0 0 1px $primary-color;
+
                                     +button {
                                         border-left: none;
                                     }
@@ -60,6 +61,7 @@
                             &.selected,
                             &:hover {
                                 border: 1px solid $primary-color;
+                                box-shadow: inset 0 0 0 1px $primary-color;
         
                                 p {
                                     color: $primary-color;
@@ -102,6 +104,7 @@
                                 &.selected,
                                 &:hover {
                                     border-right: 1px solid $primary-color;
+                                    box-shadow: inset 0 0 0 1px $primary-color;
         
                                     +button {
                                         border-left: none;
@@ -123,6 +126,7 @@
                             &:hover {
                                 border-color: $primary-color;
                                 border: 1px solid $primary-color;
+                                box-shadow: inset 0 0 0 1px $primary-color;
         
                                 p {
                                     color: $primary-color;
