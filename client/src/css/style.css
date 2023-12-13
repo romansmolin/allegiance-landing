@@ -201,7 +201,6 @@ h3 {
 }
 
 .main {
-  max-width: 1440px;
   margin: 0 auto;
 }
 .main__form {
@@ -744,6 +743,22 @@ h3 {
 @media only screen and (max-width: 1350.98px) {
   .main .background-img {
     display: none;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .main {
+    height: 100%;
+    position: relative;
+    max-width: unset;
+  }
+  .main .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main__form {
+    margin-top: unset;
   }
 }
 @media only screen and (max-width: 991.98px) {
