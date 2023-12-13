@@ -73,7 +73,7 @@ h3 {
 }
 .form-input__error {
   text-align: right;
-  color: #32B966;
+  color: #DC3545;
   font-weight: 700;
   font-size: 16px;
   height: 15px;
@@ -345,7 +345,7 @@ h3 {
 .main__form .step-1 {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 @media only screen and (max-width: 991.98px) {
   .main__form .step-1 {
@@ -356,7 +356,7 @@ h3 {
 .main__form .step-2 {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 @media only screen and (max-width: 991.98px) {
   .main__form .step-2 {
@@ -560,7 +560,7 @@ h3 {
 .main__form .step-4 {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 @media only screen and (max-width: 991.98px) {
   .main__form .step-4 {
@@ -571,7 +571,7 @@ h3 {
 .main__form .step-5 {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 @media only screen and (max-width: 991.98px) {
   .main__form .step-5 {
@@ -621,7 +621,7 @@ h3 {
 .main__form .step-6 {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 @media only screen and (max-width: 991.98px) {
   .main__form .step-6 {
