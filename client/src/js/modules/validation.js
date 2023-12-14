@@ -19,12 +19,14 @@ function handleChoiceButtonClick(button, updateFunction, errorId, dynamicSpan) {
     button.classList.add('selected');
 
     const data = button.getAttribute("data-type");
+    const formKey = button.getAttribute("data-form-key");
+
 
     dynamicFields.forEach(field => {
         field.textContent = data;
     })
 
-    updateFunction(data);
+    updateFunction(formKey, data);
 }
 
 function validateInput(input, errorId, updateFunction, validationRegex, errorMessage) {

@@ -72,7 +72,7 @@
                             class="form-input"
                             placeholder="Moving From Zip Code"
                             id="ozip"
-                            onblur="validateZipCode(this, 'ozip-error', updateZipCode)"
+                            onblur="validateZipCode(this, 'ozip-error', updateFormData)"
                         >
                         <div class="input-icon ozip"></div>
                         <span class="form-input__error" id="ozip-error"></span>
@@ -86,7 +86,7 @@
                             class="form-input"
                             placeholder="Moving To Zip Code"
                             id="dzip"
-                            onblur="validateZipCode(this, 'dzip-error', updateZipCode)"
+                            onblur="validateZipCode(this, 'dzip-error', updateFormData)"
                         >
                         <div class="input-icon dzip"></div>
                         <span class="form-input__error" id="dzip-error"></span>
@@ -109,8 +109,9 @@
                             <button 
                                 type="button" 
                                 class="choise-buttons button" 
-                                data-type="house" 
-                                onclick="handleChoiceButtonClick(this, updatePropertyType, 'property-error', '.property-field')"
+                                data-type="house"
+                                data-form-key="propertyType" 
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'property-error', '.property-field')"
                             >
                                 <svg width="46" height="34" viewBox="0 0 46 34" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -123,8 +124,9 @@
                             <button 
                                 type="button" 
                                 class="choise-buttons button" 
-                                data-type="apartment" 
-                                onclick="handleChoiceButtonClick(this, updatePropertyType, 'property-error', '.property-field')"
+                                data-type="apartment"
+                                data-form-key="propertyType" 
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'property-error', '.property-field')"
                             >
                                 <svg width="39" height="34" viewBox="0 0 39 34" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +148,8 @@
                                 type="button" 
                                 class="button" 
                                 data-type="ASAP"
-                                onclick="handleChoiceButtonClick(this, updateMovingDate, 'date-error', '.date-field')"
+                                data-form-key="movedte"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'date-error', '.date-field')"
                             >
                                 <svg width="38" height="53" viewBox="0 0 38 53" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +163,8 @@
                                 type="button" 
                                 class="button" 
                                 data-type="This Month"
-                                onclick="handleChoiceButtonClick(this, updateMovingDate, 'date-error', '.date-field')"
+                                data-form-key="movedte"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'date-error', '.date-field')"
                             >
                                 <svg width="50" height="53" viewBox="0 0 50 53" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +179,8 @@
                                 type="button" 
                                 class="button" 
                                 data-type="Flexible Timing"
-                                onclick="handleChoiceButtonClick(this, updateMovingDate, 'date-error', '.date-field')"
+                                data-form-key="movedte"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'date-error', '.date-field')"
                             >
                                 <svg width="32" height="53" viewBox="0 0 32 53" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +202,8 @@
                                 type="button" 
                                 class="button size-btn"
                                 data-type="1 Bedroom"
-                                onclick="handleChoiceButtonClick(this, updatePropertySize, 'size-error', '.size-field')"
+                                data-form-key="movesize"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'size-error', '.size-field')"
                             >
                                 <span>1</span>
                                 <p>Bedroom</p>
@@ -206,7 +212,8 @@
                                 type="button" 
                                 class="button size-btn"
                                 data-type="2 Bedroom"
-                                onclick="handleChoiceButtonClick(this, updatePropertySize, 'size-error', '.size-field')"
+                                data-form-key="movesize"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'size-error', '.size-field')"
                             >
                                 <span>2</span>
                                 <p>Bedroom</p>
@@ -215,7 +222,8 @@
                                 type="button" 
                                 class="button size-btn"
                                 data-type="3 Bedroom"
-                                onclick="handleChoiceButtonClick(this, updatePropertySize, 'size-error', '.size-field')"
+                                data-form-key="movesize"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'size-error', '.size-field')"
                             >
                                 <span>3</span>
                                 <p>Bedroom</p>
@@ -224,7 +232,8 @@
                                 type="button" 
                                 class="button size-btn"
                                 data-type="+4 Bedroom"
-                                onclick="handleChoiceButtonClick(this, updatePropertySize, 'size-error', '.size-field')"
+                                data-form-key="movesize"
+                                onclick="handleChoiceButtonClick(this, updateFormData, 'size-error', '.size-field')"
                             >
                                 <span>4+</span>
                                 <p>Bedroom</p>
@@ -262,7 +271,7 @@
                             class="form-input" 
                             id="fullname"
                             placeholder="Full Name"
-                            onblur="validateFullName(this, 'fullname-error', updateName)"
+                            onblur="validateFullName(this, 'fullname-error', updateFormData)"
                         >
                         <div class="input-icon fullname"></div>
                         <span class="form-input__error" id="fullname-error"></span>
@@ -275,7 +284,7 @@
                             class="form-input" 
                             id="email"
                             placeholder="Enter Your Email"
-                            onblur="validateEmail(this, 'email-error', updateEmail)"
+                            onblur="validateEmail(this, 'email-error', updateFormData)"
                         >
                         <div class="input-icon email"></div>
                         <span class="form-input__error" id="email-error"></span>
@@ -288,7 +297,7 @@
                             class="form-input" 
                             id="phone"
                             placeholder="Enter Your Phone Number"
-                            onblur="validatePhone('phone-error', updatePhone)"
+                            onblur="validatePhone('phone-error', updateFormData)"
                         >
                         <div class="input-icon phone"></div>
                         <span class="form-input__error" id="phone-error"></span>
